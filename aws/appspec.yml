@@ -4,6 +4,10 @@ files:
 - source: /
   destination: /var/www/html/
 hooks:
+  LS:
+  - location: scripts/test
+    timeout: 300
+    runas: root
   BeforeInstall:
   - location: scripts/install_dependencies
     timeout: 300
@@ -15,4 +19,5 @@ hooks:
   - location: scripts/stop_server
     timeout: 300
     runas: root
+
 
